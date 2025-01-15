@@ -1,9 +1,9 @@
 module.exports = {
-  transform: {
-    '^.+\\.[t|j]sx?$': 'babel-jest',
+  moduleNameMapper: {
+    "^react-router-dom$": "<rootDir>/node_modules/react-router-dom",
   },
-  transformIgnorePatterns: [
-    '/node_modules/',
-  ],
-
+  transform: {
+    "^.+\\.jsx?$": "babel-jest",
+  },
+  transformIgnorePatterns: ["/node_modules/"],
 };

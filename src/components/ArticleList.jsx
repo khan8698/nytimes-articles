@@ -40,8 +40,12 @@ const ArticleList = () => {
       ) : (
         <ul className="space-y-4 sm:space-y-6">
           {articles.map((article) => {
-            const imageUrl = article.media?.[0]?.['media-metadata']?.find(img => img.format === 'mediumThreeByTwo440')?.url;
-            const publishedDate = new Date(article.published_date).toLocaleDateString();
+            const imageUrl = article.media?.[0]?.["media-metadata"]?.find(
+              (img) => img.format === "mediumThreeByTwo440"
+            )?.url;
+            const publishedDate = new Date(
+              article.published_date
+            ).toLocaleDateString();
 
             return (
               <li
@@ -55,7 +59,9 @@ const ArticleList = () => {
                   >
                     {article.title}
                   </Link>
-                  <p className="text-gray-600 mt-2 line-clamp-3">{article.abstract}</p>
+                  <p className="text-gray-600 mt-2 line-clamp-3">
+                    {article.abstract}
+                  </p>
                   <div className="text-gray-500 text-sm mt-4">
                     <p>Published on: {publishedDate}</p>
                     <p>Section: {article.section}</p>
@@ -63,7 +69,11 @@ const ArticleList = () => {
                   </div>
                 </div>
                 {imageUrl && (
-                  <img src={imageUrl} alt={article.title} className="w-full sm:w-40 h-auto rounded-lg mt-4 sm:mt-0 sm:ml-4 object-contain" />
+                  <img
+                    src={imageUrl}
+                    alt={article.title}
+                    className="w-full sm:w-40 h-auto rounded-lg mt-4 sm:mt-0 sm:ml-4 object-contain"
+                  />
                 )}
               </li>
             );

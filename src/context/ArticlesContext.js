@@ -1,11 +1,11 @@
-import React, { createContext, useState, useEffect } from 'react';
-import { fetchMostViewedArticles } from '../api/nytimes';
+import React, { createContext, useState, useEffect } from "react";
+import { fetchMostViewedArticles } from "../api/nytimes";
 
 const ArticlesContext = createContext();
 
 export const ArticlesProvider = ({ children }) => {
   const [articles, setArticles] = useState([]);
-  const [period, setPeriod] = useState(1); 
+  const [period, setPeriod] = useState(1);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export const ArticlesProvider = ({ children }) => {
         setArticles(data);
         setError(null);
       } catch (err) {
-        setError('Failed to fetch articles. Please try again.');
+        setError("Failed to fetch articles. Please try again.");
         setArticles([]);
       }
     };
